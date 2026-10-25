@@ -1,0 +1,27 @@
+COURTSIDE IQ — ML Activation and Defender Feed Reliability
+
+CHANGES
+- Sidebar now offers an explicit one-click historical ML bootstrap when no trained model exists.
+  Downloads NBA.com player game logs for 2023-24, 2024-25, 2025-26, caches
+  them locally, and runs the existing chronological holdout trainer.
+  Models are only activated for supported pregame schedule selections when
+  validated on held-out data; enabling the toggle alone is insufficient.
+- Defender feed requests explicitly send NBA.com league_id and totals mode.
+- Empty defended-shot tables are recorded per season/category instead of
+  collapsing into a generic 'no data' failure. Current and prior seasons
+  remain independent attempts; missing records are never invented.
+- Diagnostics now distinguish observed defender aggregates from unavailable
+  defender data and show categories actually returned.
+
+LIMITATIONS
+- Live NBA.com feeds can return empty tables or reject requests; no app can
+  guarantee a third-party endpoint supplies defended-shot data. Aggregate
+  defender tables are not actual possession-by-possession primary matchups.
+- Historical ML requires downloading real data on the user's Mac. This ZIP
+  does not contain a trained model and no historical training was run here.
+- No live NBA game outcome backtest has been run for this release. 150,000
+  iterations improve sampling precision, not the underlying model's accuracy.
+- Use the selected pregame matchup in Live NBA data mode for trained ML.
+
+VERIFICATION
+95 automated pytest tests passed in the development environment.

@@ -1,0 +1,11 @@
+COURTSIDE IQ — Automatic ML activation update
+
+Changes:
+- On the first Live NBA simulation of each UTC day without a trained manifest, attempts to fetch real historical NBA logs and train automatically. Reuses cached logs and does not fabricate training records.
+- A failed provider request is recorded; further simulations that day proceed using statistical baselines instead of repeatedly downloading or blocking.
+- The sidebar offers a manual retry and displays the underlying training error.
+- Custom future matchups may use trained historical ML without requiring a selected schedule fixture. Historical replays still fail closed if the archive includes future observations.
+- Completed or live games do not receive historical ML adjustments.
+- 95 local unit tests passed on the packaged source. This is not evidence of predictive accuracy or third-party feed availability.
+
+Important: NBA.com may block downloads or return no usable defended-shot records. No software change can guarantee that upstream data will be available. Defensive estimates remain estimates when tracking is unavailable. Historical ML can only be claimed active when the simulation diagnostic reports historical_ml_used=true.

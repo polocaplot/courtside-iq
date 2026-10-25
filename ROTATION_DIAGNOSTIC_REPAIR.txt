@@ -1,0 +1,16 @@
+COURTSIDE IQ — Diagnostic-driven rotation repair (2026-10-24)
+
+- All 26/26 players in the supplied MIA @ CHA report have usable shot profiles.
+- The report marked Kon Knueppel, Coby White and Grant Williams as Out;
+  zero projected minutes are expected. The realism audit now separates these
+  injury exclusions from healthy-player minute deviations.
+- A fixed 9-10 man game rotation excluded several healthy players with
+  meaningful playing-time evidence. The rotation can now use 10-11 players
+  when 11-12 eligible players have >=8 minute priors, while keeping a tighter
+  rotation for extremely crowded 13+ player priors.
+- The candidate roster now ranks by effective recent-minute prior and retains
+  up to 15 players, instead of using season minutes and cutting at 13.
+- No claim of verified historical predictive accuracy. The Charlotte pilot
+  still needs a large shot probability correction (+0.0467), and historical
+  pregame ML remains unverified on this completed game.
+- Tests: 114 passing. Live NBA.com and Mac launch were not tested.

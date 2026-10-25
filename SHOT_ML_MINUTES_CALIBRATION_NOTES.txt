@@ -1,0 +1,10 @@
+COURTSIDE IQ — Shot History / Minutes / Scoring Audit update
+
+- Automatically retrieves current-season team shot charts, plus player-ID-matched shot charts for the previous THREE seasons for the selected matchup. Historical data are weighted 0.40/0.18/0.08 by recency. Only actual NBA.com observed attempts count; not all players have attempts.
+- Up to 12 historical player-season downloads per simulation; cached per season/player in ~/.courtsideiq/shot_intelligence/history. Further simulations continue the download backlog. NBA.com may throttle or refuse access.
+- Historical data do not replace current-season cache and are not counted twice on repeated simulations. Traded players retain their current-team identity.
+- Rotation minute priors now avoid treating overlapping last-5/last-10 samples as independent, and previous-team minutes no longer overwrite current roles after a trade. The simulator conserves 240 team minutes in regulation and respects caps/out statuses.
+- Independent team scoring calibration cap increased from 1.5 to 3.5 percentage points; a scoring residual is reported explicitly. This is a heuristic and cannot guarantee accurate predictions.
+- Diagnostics now report pending historical chart downloads and simulated-minus-target scoring gaps for BOTH teams.
+- ML on games that have already started/finished is deliberately disabled to avoid future-data leakage. To test ML activation select a future game and check whether a validated manifest exists. A trained model is not guaranteed until historical download/training succeeds.
+- No optical player tracking or verified matchup assignments are implied.

@@ -1,0 +1,19 @@
+DEFENSIVE AGGREGATE FEED REPAIR — 2026-10-24
+
+Fixed: When NBA.com LeagueDashPtDefend returns valid defender rows whose
+CLOSE_DEF_PERSON_ID cannot be matched to the current season's player table,
+COURTSIDE IQ now attempts a conservative exact normalized player-name match
+against the current roster. Accents and punctuation are normalized. Ambiguous
+names are never guessed, and players absent from the roster are excluded.
+
+Added feed diagnostics: current/prior raw row counts, roster ID/name counts,
+and matched-row counts by ID and by name. Inspect the Shot Lab feed metadata
+if the defensive data still reads zero; this distinguishes an empty/blocked
+NBA.com response from an identity matching failure.
+
+Limitations: NBA.com defended-shot aggregates are NOT optical tracking,
+individual defender assignments, or observed possession-by-possession matchups.
+If NBA.com does not return usable defended-shot records, the app cannot
+manufacture real observed data and the simulation continues with estimates.
+
+97 existing and new tests passed in this build.

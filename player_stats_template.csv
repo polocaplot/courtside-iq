@@ -1,0 +1,9 @@
+PLAYER_NAME,TEAM_ABBREVIATION,PTS,REB,AST,MIN,GP
+Example Player 1,BOS,25,5,7,34,20
+Example Player 2,BOS,15,10,2,29,20
+Example Player 3,PHX,24,4,6,34,20
+Example Player 4,PHX,14,8,3,28,20
+Example Player 5,GSW,22,5,6,33,20
+Example Player 6,GSW,14,7,2,28,20
+Example Player 7,DEN,26,12,9,35,20
+Example Player 8,DEN,17,4,3,31,20

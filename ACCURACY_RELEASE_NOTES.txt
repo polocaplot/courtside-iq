@@ -1,0 +1,14 @@
+COURTSIDE IQ — shooting input integrity and minute provenance update
+
+Verified code changes:
+- Blend FGM with the same historical/current rate strategy as FGA, FG3M, and FTA.
+- Reconcile impossible FG/3PT/FT shooting totals after rate blending, with per-player flags.
+- Include observed last-5, last-10, and games-played minute inputs in the single-paste report.
+- Include simulator-effective minute priors so projected minutes can be traced.
+- Flag reconciled shooting data in simulation warnings.
+
+Not solved by this patch:
+- No observed defender data if NBA.com refuses/omits the feed.
+- Historical ML needs genuine trained models and eligible pregame data.
+- Game and player predictive accuracy cannot be guaranteed without held-out validation.
+- Actual Mac launch and NBA.com connectivity cannot be verified from this environment.

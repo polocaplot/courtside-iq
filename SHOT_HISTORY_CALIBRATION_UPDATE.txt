@@ -1,0 +1,7 @@
+2026-10-24 diagnostic-driven update
+
+- Historical shot downloads are now restricted to the TWO SELECTED TEAMS, rather than the full league player table. The 1,131 pending historical downloads in the submitted diagnostic were caused by looping over all NBA players.
+- Historical shot retrieval now covers up to five prior seasons per selected player. Still limited to 12 requests per simulation to avoid long NBA.com timeouts; subsequent runs fill the cache. A player may have no observed shots in a season.
+- Possession scoring calibration now measures its response with a second pilot and verifies it with an independent pilot; separate corrections per team, bounded at +/-6 percentage points. Reports residuals >2 PPG as warnings instead of hiding them.
+- Historical ML still cannot safely be applied to a started/completed game using an uncut current-season trained model. Upcoming games can use the trained model if training succeeded.
+- No claim of live NBA endpoint validation. Verify the next diagnostic for pending count, coverage, calibration residuals, and actual player minutes.

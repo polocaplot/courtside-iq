@@ -1,0 +1,19 @@
+COURTSIDE IQ — FULL-GAME EVENT LEARNING + OPTIONAL EVENT VIDEO
+
+1. NBA Database > Sync recent games / Continue history.
+2. Every available play-by-play event is archived for completed games.
+3. The simulator uses past-only, coverage-validated player shot selection
+   (when at least 4 eligible games and 40 classified shots exist), plus
+   its existing historical minutes/fouls/pace priors.
+4. Optional: place authorized video clips in ~/.courtsideiq/event_clips/
+   using filename GAMEID__PLAYID.mp4 (IDs shown in NBA Database event log).
+   Press "Link local event video clips" to associate clips with events.
+   Press "Analyze linked local event clips" to run the optional detector
+   and save observations linked to the original game and play.
+5. Use COURTSIDE VISION to process local videos. This prototype DOES NOT
+   infer validated NBA player identities, physical coordinates, or complete
+   game tracking from clips. It DOES NOT download NBA.com video or bypass DRM.
+
+IMPORTANT: play-by-play event timelines are NOT continuous full-game video.
+Some events have no clip. Video coverage is reported, never assumed.
+An online feed can fail; sync errors are displayed in NBA Database.

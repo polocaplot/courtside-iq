@@ -1,0 +1,34 @@
+COURTSIDE IQ — REALISM ENGINE UPDATE (2026-10-24)
+
+WHAT CHANGED
+1. On-court events now use per-minute player rates. Previous shooting,
+   passing, rebound and defensive event weights multiplied by the player's
+   projected minutes a second time, systematically over-favoring starters.
+   Small-minute samples are shrunk with conservative exposure priors.
+2. The lineup scheduler now compares each player's actual played slots to
+   his game-specific target, prioritizes remaining minute deficits, keeps
+   some lineup continuity, and honors the caller's foul/injury eligibility.
+3. In possession mode, overtime is simulated with extra shot, foul, assist,
+   rebound and turnover events, rather than inventing points after regulation.
+   Overtime is approximated with 5-minute event periods. Foul state currently
+   resets at overtime boundaries, which is a remaining realism limitation.
+4. Late-game trailing teams modestly increase 3-point shot selection;
+   leading teams modestly reduce it. Threes are more likely assisted than twos.
+5. The diagnostic includes realism_audit: scoring identity, minute
+   conservation, overtime incidence, and player minute deviations from priors.
+   Large (>3 percentage point) calibration shifts are explicitly flagged.
+
+TESTING
+112 automated tests pass, including new minute-budget and overtime
+accounting tests. Tests verify structural correctness only, NOT forecasting
+accuracy. This update has not been run against live NBA.com on the user's Mac.
+
+STILL NEEDED FOR VERIFIED PREDICTIVE REALISM
+- Historical walk-forward validation of the FULL possession engine, with
+  authentic pregame injuries, roster and lineup data for each historical date.
+- Coaching substitution timing and observed lineup frequencies, not just
+  approximate five-player rotation intervals.
+- Real matchup-level defensive tracking (not available from aggregate feeds).
+- Empirical calibration of player shot, foul, and usage models against held-out
+  actual game distributions; do not confuse matching PPG with prediction skill.
+- Genuine trained ML verification for an upcoming game.

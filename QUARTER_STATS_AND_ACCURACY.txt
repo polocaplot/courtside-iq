@@ -1,0 +1,18 @@
+COURTSIDE IQ — Quarter-by-quarter simulation update
+
+Detailed possession mode now records player and team events at each game's
+own four quarter boundaries. Quarter scores, quarter-ending cumulative scores,
+team box stats, and individual quarter box stats are all aggregated from the
+same simulation outcomes as the final game projections. A selected quarter's
+player averages can be exported as CSV. Overtime contributions are shown
+separately; they are not redistributed into Q4.
+
+The quarter split uses each game's possession pace, not exact shot clocks or
+verified NBA play-by-play. Quarter predictions and the team scoring calibration
+are NOT historically backtested. The simulator still independently calibrates
+both teams to their own pregame offensive/defensive targets and reports large
+corrections. Player minute priors use available current/recent evidence but do
+not establish a coach's confirmed rotation or injury-return schedule.
+
+Validation: test_quarter_statistics.py verifies quarter score reconciliation,
+player stat consistency, minutes, overtime separation, and baseline honesty.

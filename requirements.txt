@@ -1,0 +1,9 @@
+streamlit>=1.36,<2
+pandas>=2.0,<3
+numpy>=1.26,<3
+plotly>=5.20,<7
+requests>=2.31,<3
+nba_api>=1.5,<2
+streamlit-autorefresh>=1.0,<2
+scikit-learn>=1.5,<2
+joblib>=1.4,<2
